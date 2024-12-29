@@ -108,16 +108,19 @@ button:hover {
     background-color: #2C3E50;
     color: #FFF;
     border: 1px solid #FFF;
+    width: auto;
 }
 
 .next-button, .submit-button {
     background-color: #28a745;
     color: #FFF;
     font-weight: bold;
+    width: auto;
 }
 
 .buttons .next-button {
     margin-left: auto; 
+    width: auto;
 }
 
 .buttons {
@@ -219,4 +222,26 @@ button:hover {
     transform: scale(1);
 }
   
+.password-requisitos ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
   
+.password-requisitos li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+  
+.password-requisitos input[type="checkbox"] {
+    margin-right: 10px;
+    width: 15px;
+    height: 15px;
+    accent-color: #28a745;
+}
+  
+.password-requisitos span {
+    color: white;
+    font-size: 14px;
+}

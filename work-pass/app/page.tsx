@@ -8,7 +8,9 @@ export default function HomePage() {
   const goToLogin = () => {
     router.push("/login");
   };
-
+  const goToCadastro = () => {
+    router.push("/cadastro")
+  }
   return (
     <div style={{ display: "flex", flexDirection: "column", alignItems: "center", marginTop: "50px" }}>
       <h1>Bem-vindo à página inicial</h1>
@@ -26,6 +28,11 @@ export default function HomePage() {
         }}
       >
         Ir para Login
+      </button>
+      <button
+      onClick={goToCadastro}
+      >
+        cadastro
       </button>
     </div>
   );
