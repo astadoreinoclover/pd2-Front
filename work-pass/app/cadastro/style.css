@@ -1,3 +1,10 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -220,6 +227,23 @@ button:hover {
 .form-step.active {
     opacity: 1;
     transform: scale(1);
+}
+
+.password-container {
+    position: relative;
+}
+
+.eye-icon {
+    position: absolute;
+    right: 3px;
+    top: 30%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #FFF;
+    font-size: 20px;
+    cursor: pointer;
+    width: auto;
 }
   
 .password-requisitos ul {

@@ -20,6 +20,8 @@ export const PasswordDefinition: React.FC<PasswordDefinitionProps> = ({ senha, s
   });
   const [senhasIguais, setSenhasIguais] = useState(false);
   const [tamanho, setTamanho] = useState(false);
+  const [isPasswordVisible, setIsPasswordVisible] = useState<boolean>(false);
+  const [isPasswordVisibleConf, setIsPasswordVisibleConf] = useState<boolean>(false);
 
   const validarRequisitos = (senha: string) => {
     const maiuscula = /[A-Z]/.test(senha);
@@ -63,30 +65,56 @@ export const PasswordDefinition: React.FC<PasswordDefinitionProps> = ({ senha, s
     setSenhasIguais(senha === confirmacao);
   };
 
+  const togglePasswordVisibility = (): void => {
+    setIsPasswordVisible((prev) => !prev);
+  };
+
+  const togglePasswordVisibilityConf = (): void => {
+    setIsPasswordVisibleConf((prev) => !prev);
+  };
+
   return (
     <div>
       <h3 className="titulo">Definição de Senha</h3>
       <div className="form-group">
         <label htmlFor="senha">Senha</label>
-        <input
-          type="password"
-          id="senha"
-          placeholder="Digite sua senha"
-          value={senha.senha}
-          onChange={handlePasswordChange}
-          required
-        />
+        <div className="password-container">
+          <input
+            type={isPasswordVisible ? "text" : "password"}
+            id="senha"
+            placeholder="Digite sua senha"
+            value={senha.senha}
+            onChange={handlePasswordChange}
+            required
+          />
+          <button
+            type="button"
+            className="eye-icon"
+            onClick={togglePasswordVisibility}
+          >
+            {isPasswordVisible ? "👁️" : "🙈"}
+          </button>
+        </div>
       </div>
       <div className="form-group">
         <label htmlFor="confirmacao">Confirmação de Senha</label>
-        <input
-          type="password"
-          id="confirmacao"
-          placeholder="Confirme sua senha"
-          value={senha.confirmacao}
-          onChange={handleConfirmacaoChange}
-          required
-        />
+        <div className="password-container">
+          <input
+            type={isPasswordVisibleConf ? "text" : "password"}
+            id="confirmacao"
+            placeholder="Confirme sua senha"
+            value={senha.confirmacao}
+            onChange={handleConfirmacaoChange}
+            required
+          />
+          <button
+            type="button"
+            className="eye-icon"
+            onClick={togglePasswordVisibilityConf}
+          >
+            {isPasswordVisibleConf ? "👁️" : "🙈"}
+          </button>
+        </div>
       </div>
       <div className="password-requisitos">
         <ul>

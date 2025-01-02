@@ -1,0 +1,457 @@
+/* Geral */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #f4f4f4;
+  color: #333;
+  font-size: 16px;
+  line-height: 1.6;
+  transition: background-color 0.5s ease;
+  display: flex;
+  justify-content: center;
+}
+
+/* Navbar fixa */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.navbar.expanded {
+  background-color: #2c3e50;
+}
+
+.navLogo {
+  width: 100px;
+}
+
+.navLinks {
+  display: flex;
+  gap: 20px;
+}
+
+.navLink {
+  transition: color 0.3s ease;
+  font-size: 18px;
+  color: #333;
+  text-decoration: none;
+  border: 1px solid transparent;
+  padding: 5px 10px;
+}
+
+.navLink:hover {
+  color: #3498db;
+}
+
+.hamburgerMenu {
+  display: none;
+}
+
+.loginButton {
+  border: 1px solid #2c3e50;
+  border-radius: 5px;
+  padding: 5px 10px;
+  color: #2c3e50;
+  margin-right: 20px;
+}
+
+.signupButton {
+  border: 1px solid #2c3e50;
+  border-radius: 5px;
+  padding: 5px 10px;
+  color: #2c3e50;
+}
+
+.signupButton:hover {
+  background-color: #2c3e50;
+  color: #eee;
+}
+
+.loginButton:hover {
+  background-color: #2c3e50;
+  color: #eee;
+}
+
+.navbarmenus {
+  display: flex;
+  flex-direction: row;
+}
+
+@media (max-width: 768px) {
+  .navLinks {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    padding: 20px;
+    background-color: #2c3e50;
+    position: absolute;
+    top: 85px;
+    left: 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .hamburgerMenu {
+    display: block;
+    cursor: pointer;
+    font-size: 30px;
+  }
+
+  .navbar.expanded .navLinks {
+    display: flex;
+  }
+
+  .navLink {
+    color: #fff;
+  }
+
+  .navbarmenus {
+    flex-direction: row;
+  }
+
+  .loginButton {
+    border: 1px solid #eee;
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: #eee;
+    margin-right: 10px;
+  }
+
+  .signupButton {
+    border: 1px solid #eee;
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: #eee;
+  }
+}
+
+/* Scroll animation */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hero Section */
+.hero {
+  margin-top: 100px;
+  padding: 80px 20px;
+  background: linear-gradient(to right, #3498db, #2c3e50);
+  color: #fff;
+  text-align: center;
+}
+
+.title {
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.subtitle {
+  font-size: 24px;
+  margin-bottom: 40px;
+}
+
+.buttonGroup {
+  margin-top: 30px;
+}
+
+.buttonOutline {
+  width: auto;
+  background-color: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  padding: 10px 30px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.buttonOutline:hover {
+  background-color: #fff;
+  color: #3498db;
+}
+
+.buttonOutline:focus {
+  outline: none;
+}
+
+/* Seções */
+.sectionTitle {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 40px;
+  text-align: center;
+  color: #333;
+}
+
+.plans {
+  padding: 60px 20px;
+  background-color: #fff;
+}
+
+.plansGrid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.planCard {
+  padding: 30px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.planCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.planTitle {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.planPrice {
+  font-size: 22px;
+  color: #3498db;
+  margin: 10px 0;
+}
+
+.planFeatures {
+  list-style: none;
+  margin: 20px 0;
+  padding: 0;
+}
+
+.planFeatures li {
+  margin: 5px 0;
+  color: #7f8c8d;
+}
+
+.planButton {
+  background-color: #3498db;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.planButton:hover {
+  background-color: #2980b9;
+}
+
+/* Carousel */
+.carousel {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+}
+
+.carouselContainer {
+  position: relative;
+  margin: auto;
+  max-width: 600px;
+}
+
+.carousel img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.5s ease;
+}
+
+.carousel h3 {
+  font-size: 28px;
+  margin: 20px 0;
+}
+
+.carousel p {
+  font-size: 18px;
+  color: #7f8c8d;
+}
+
+.carouselControls {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.carouselButton {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #bdc3c7;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.carouselButton.active {
+  background-color: #3498db;
+}
+
+.carouselButton:hover {
+  background-color: #2980b9;
+}
+
+/* Developers */
+.developers {
+  padding: 60px 20px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.developersList {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.developerCard {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  width: 250px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.developerCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.developerImage {
+  width: 100%;
+  height: 150px;
+  border-radius: 8px;
+}
+
+.developerName {
+  font-size: 22px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.developerRole {
+  font-size: 16px;
+  color: #7f8c8d;
+}
+
+/* Contact Form */
+.contact {
+  padding: 60px 20px;
+  background-color: #f4f4f4;
+  text-align: center;
+}
+
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.input,
+.textarea {
+  padding: 10px;
+  margin: 10px 0;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: #aaa;
+}
+
+.textarea {
+  height: 120px;
+}
+
+.contactButton {
+  background-color: #3498db;
+  color: #fff;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contactButton:hover {
+  background-color: #2980b9;
+}
+
+/* Footer */
+.footer {
+  background-color: #2c3e50;
+  color: #fff;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.footerLinks {
+  margin-bottom: 20px;
+}
+
+.footerLinks a {
+  margin: 0 10px;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+.footerLinks a:hover {
+  color: #3498db;
+}
+
+.socialIcons {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.socialLink img {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease;
+}
+
+.socialLink img:hover {
+  transform: scale(1.1);
+}
+
+.footerCopy {
+  font-size: 14px;
+  color: #bdc3c7;
+}

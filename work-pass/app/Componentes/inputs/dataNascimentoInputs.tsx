@@ -7,11 +7,11 @@ interface NascimentoInputProps {
 
 export const NascimentoInput: React.FC<NascimentoInputProps> = ({ value, onChange }) => {
   const applyMask = (value: string) => {
-    const rawValue = value.replace(/\D/g, ""); // Remove caracteres não numéricos
+    const rawValue = value.replace(/\D/g, "");
     return rawValue
       .replace(/^(\d{2})(\d)/, "$1/$2")
       .replace(/^(\d{2})\/(\d{2})(\d)/, "$1/$2/$3")
-      .slice(0, 10); // Limita ao tamanho máximo da data
+      .slice(0, 10);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
